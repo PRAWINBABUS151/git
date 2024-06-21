@@ -1,0 +1,26 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Create a file with roll number as the name
+        run: echo "This is a sample file." > 21ecr151.txt
+
+      - name: Print the current working directory
+        run: pwd
+
+      - name: List all files and directories with detailed information
+        run: ls -la
+
+      - name: Display the current date and time
+        run: date
